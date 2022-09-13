@@ -12,7 +12,7 @@ RUN apk add --update curl openssl wget bash \
 
 # copy source to image
 ADD . .
-RUN rm -rf /app/.git /app/.dockerignore /app/docker && mv /app/docker/startup.sh /app
+RUN rm -rf /app/.git /app/.dockerignore && mv /app/docker/startup.sh /app
 
 EXPOSE 8080
 CMD ["/bin/sh", "/app/startup.sh"]
