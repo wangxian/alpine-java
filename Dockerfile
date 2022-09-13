@@ -5,7 +5,7 @@ WORKDIR /app
 
 # install packages
 RUN apk add --update curl openssl wget bash \
-        openjdk11-jdk maven \
+        openjdk8-jdk maven \
     && apk add tzdata && cp /usr/share/zoneinfo/PRC /etc/localtime && echo "PRC" > /etc/timezone && apk del tzdata \
     && rm -rfv /var/cache/apk/* \
     && java -version
