@@ -1,11 +1,10 @@
-FROM alpine:3.16
+FROM adoptopenjdk/openjdk11-openj9:x86_64-alpine-jre-11.0.11_9_openj9-0.26.0
 MAINTAINER WangXian <xian366@126.com>
 
 WORKDIR /app
 
 # install packages
-RUN apk add --update curl openssl wget bash \
-        openjdk11-jdk maven \
+RUN apk add --update curl openssl bash \
     && apk add tzdata && cp /usr/share/zoneinfo/PRC /etc/localtime && echo "PRC" > /etc/timezone && apk del tzdata \
     && rm -rfv /var/cache/apk/* \
     && java -version
