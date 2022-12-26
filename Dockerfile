@@ -4,7 +4,7 @@ MAINTAINER WangXian <xian366@126.com>
 WORKDIR /app
 
 # install packages
-RUN apk add --update curl openssl wget bash \
+RUN apk add --update curl openssl bash \
         openjdk8 maven \
     && apk add tzdata && cp /usr/share/zoneinfo/PRC /etc/localtime && echo "PRC" > /etc/timezone && apk del tzdata \
     && rm -rfv /var/cache/apk/* \
